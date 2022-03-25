@@ -87,6 +87,9 @@ img {
   display: block;
   padding: 10px;
 }
+.main-header__input i {
+  cursor: pointer;
+}
 .main {
   padding: 0 20px;
 }
