@@ -346,6 +346,9 @@ img {
     .product__img {
       height: 300px;
     }
+    .editor__circle {
+     display: none;
+    }
 }
 /* ESTILOS DE TABLET */
 @media screen and (min-width: 768px) {
@@ -546,11 +549,50 @@ img {
     margin: 0 200px;
   }
   .editor__item {
-    height: 370px;
+    height: 350px;
   }
   .container-card {
     display: flex;
     flex-direction: row;
     flex-wrap: inherit;
+  }
+  .editor__circle {
+    width: 200px;
+    height: 200px;
+    border: 2px solid #fff;
+    border-radius: 50%;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    position: absolute;
+    bottom: -200px;
+    right: -40px;
+    color: #fff;
+    padding: 20px;
+    padding-bottom: 70px;
+    padding-right: 50px;
+    font-size: 1.1em;
+    text-align: center;
+    font-weight: bold;
+    transition: all 0.5s;
+  }
+  .editor__item:hover .editor__circle {
+    transform: scale(1.2);
+    bottom: -90px;
+    right: 175px;
+  }
+  .editor__item::before {
+    content: "";
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background: rgba(255, 255, 255, 0.2);
+    opacity: 0;
+    transition: all 0.5s;
+  }
+  .editor__item:hover::before {
+    opacity: 1;
   }
 }
