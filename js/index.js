@@ -1,3 +1,7 @@
+const productoMangas = document.querySelectorAll('.product__icon');
+const productoPops = document.querySelectorAll('.btn-compra');
+
+
 let productos = [
   {
     nombre: "Shingeki No Kyojin",
