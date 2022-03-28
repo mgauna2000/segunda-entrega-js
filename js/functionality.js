@@ -1,46 +1,89 @@
 //variables
-let allContainerCart = document.querySelector('.container-products');
-let containerBuyCart = document.querySelector('.card-items');
+let allContainerCart = document.querySelector(".container-products");
+let containerBuyCart = document.querySelector(".card-items");
+let priceTotal = document.querySelector('.price-total');
+let amountProduct = document.querySelector('.count-product');
 
 let buyThings = [];
+let totalCard = 0;
+let countProduct = 0;
 
 //funciones
 loadEventListeners();
 function loadEventListeners() {
-    allContainerCart.addEventListener('click', addProduct);
+  allContainerCart.addEventListener("click", addProduct);
+  containerBuyCart.addEventListener("click", deleteProduct);
 }
 
 function addProduct(e) {
-    e.preventDefault();
-    if (e.target.classList.contains('product__icon')) {
-        //el parentElement agarre al elemento padre de lo que elegimos
-        const selectProduct = e.target.parentElement;
-        readTheContent(selectProduct);
-    }
+  e.preventDefault();
+  if (e.target.classList.contains("product__icon")) {
+    //el parentElement agarre al elemento padre de lo que elegimos
+    const selectProduct = e.target.parentElement;
+    readTheContent(selectProduct);
+  }
+}
+//filtramos el array y si encuentra un producto con igual id no lo agrega
+function deleteProduct(e) {
+  if (e.target.classList.contains("delete-product")) {
+    const deleteId = e.target.getAttribute("data-id");
+
+    buyThings.forEach(value => {
+        if (value.id == deleteId) {
+            let priceReduce = parseFloat(value.price) * parseFloat(value.amount);
+            totalCard = totalCard - priceReduce;
+            totalCard = totalCard.toFixed(2);
+        }
+    })
+
+    buyThings = buyThings.filter((product) => product.id !== deleteId);
+
+    countProduct--;
+  }
+  loadHtml();
 }
 
 function readTheContent(product) {
-    const infoProduct = {
-        //tomamos los valores del producto seleccionado
-        image: product.querySelector('div img').src,
-        title: product.querySelector('.product__title').textContent,
-        price: product.querySelector('div span').textContent,
-        id: product.querySelector('i').getAttribute('data-id'),
-        amount: 1
-    }
-    //hacemos una copia del arreglo previo y concatenamos el prodcuto
-    buyThings = [...buyThings, infoProduct];
-    loadHtml();
+  const infoProduct = {
+    //tomamos los valores del producto seleccionado
+    image: product.querySelector("div img").src,
+    title: product.querySelector(".product__title").textContent,
+    price: product.querySelector("div span").textContent,
+    id: product.querySelector("i").getAttribute("data-id"),
+    amount: 1
+  }
+  //cada que añadamos un producto lo sumamos
+  totalCard = parseFloat(totalCard) + parseFloat(infoProduct.price);
+  totalCard = totalCard.toFixed(2);
+  //preguntamos si el nuevo producto que añadimos ya esta en el array
+  const exist = buyThings.some(product => product.id === infoProduct.id);
+  if (exist) {
+      //creamos una variable con un nuevo array para modificar el objeto
+      const pro = buyThings.map(product => {
+          if (product.id === infoProduct.id) {
+              product.amount++;
+              return product;
+          }else{
+              return product;
+          }
+      });
+      buyThings = [...pro];
+  }else{
+      //si no existe el elemento directamente se añade
+      buyThings = [...buyThings, infoProduct];
+      countProduct++;
+  }
+  loadHtml();
 }
 
 function loadHtml() {
-    clearHtml();
-    //recorremos el array para que valla imprimiendo los productos
-    buyThings.forEach(product => {
-        const {image, title, price, id, amount} = product;
-        const row = document.createElement('div');
-        row.classList.add('item');
-        row.innerHTML = `
+  clearHtml();
+  //recorremos el array para que valla imprimiendo los productos
+  buyThings.forEach(product => {
+    const { image, title, price, amount, id } = product;
+    const row = document.createElement("div");
+    row.classList.add("item");
+    row.innerHTML = `
         <img src="${image}" alt="">
                         <div class="item-content">
                             <h5>${title}</h5>
@@ -49,10 +92,14 @@ function loadHtml() {
                         </div>
                         <span class="delete-product" data-id="${id}">X</span>
         `;
-        containerBuyCart.appendChild(row);
-    });
+    containerBuyCart.appendChild(row);
+
+    priceTotal.innerHTML = totalCard;
+
+    amountProduct.innerHTML = countProduct;
+  });
 }
 
 function clearHtml() {
-    containerBuyCart.innerHTML = '';
+  containerBuyCart.innerHTML = "";
 }

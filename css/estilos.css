@@ -14,7 +14,6 @@ img {
 }
 .main-header {
   padding: 0 20px;
-  position: relative;
 }
 .main-header__title {
   text-align: center;
@@ -83,6 +82,9 @@ img {
   color: #454546;
   border: 1px solid #454546;
   text-decoration: none;
+}
+.main-header__btn span {
+  font-size: 15px;
 }
 .main-header__input {
   display: block;
