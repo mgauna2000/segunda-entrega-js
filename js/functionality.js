@@ -34,6 +34,8 @@ function readTheContent(product) {
 }
 
 function loadHtml() {
+    clearHtml();
+    //recorremos el array para que valla imprimiendo los productos
     buyThings.forEach(product => {
         const {image, title, price, id, amount} = product;
         const row = document.createElement('div');
@@ -49,4 +51,8 @@ function loadHtml() {
         `;
         containerBuyCart.appendChild(row);
     });
+}
+
+function clearHtml() {
+    containerBuyCart.innerHTML = '';
 }
