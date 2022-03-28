@@ -3,6 +3,7 @@ const productoPops = document.querySelectorAll('.btn-compra');
 const usuario = document.querySelector('.user');
 const carrito = document.querySelector('.carrito');
 const buscar = document.querySelector('.buscar');
+const email = document.querySelector('.email');
 
 
 
