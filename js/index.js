@@ -1,5 +1,9 @@
 const productoMangas = document.querySelectorAll('.product__icon');
 const productoPops = document.querySelectorAll('.btn-compra');
+const usuario = document.querySelector('.user');
+const carrito = document.querySelector('.carrito');
+const buscar = document.querySelector('.buscar');
+
 
 
 let productos = [
