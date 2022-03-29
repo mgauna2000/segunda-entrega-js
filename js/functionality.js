@@ -1,5 +1,5 @@
 //variables
-let allContainerCart = document.querySelector(".container-products");
+let allContainerCart = document.querySelector(".products");
 let containerBuyCart = document.querySelector(".card-items");
 let priceTotal = document.querySelector('.price-total');
 let amountProduct = document.querySelector('.count-product');
@@ -17,9 +17,10 @@ function loadEventListeners() {
 
 function addProduct(e) {
   e.preventDefault();
-  if (e.target.classList.contains("product__icon")) {
+  if (e.target.classList.contains("btn-add-cart")) {
     //el parentElement agarre al elemento padre de lo que elegimos
     const selectProduct = e.target.parentElement;
+    console.log(selectProduct);
     readTheContent(selectProduct);
   }
 }
@@ -36,7 +37,7 @@ function deleteProduct(e) {
         }
     })
 
-    buyThings = buyThings.filter((product) => product.id !== deleteId);
+    buyThings = buyThings.filter(product => product.id !== deleteId);
 
     countProduct--;
   }
@@ -47,9 +48,9 @@ function readTheContent(product) {
   const infoProduct = {
     //tomamos los valores del producto seleccionado
     image: product.querySelector("div img").src,
-    title: product.querySelector(".product__title").textContent,
-    price: product.querySelector("div span").textContent,
-    id: product.querySelector("i").getAttribute("data-id"),
+    title: product.querySelector(".title").textContent,
+    price: product.querySelector("div p span").textContent,
+    id: product.querySelector("a").getAttribute("data-id"),
     amount: 1
   }
   //cada que añadamos un producto lo sumamos
