@@ -1,5 +1,7 @@
+@import url("https://fonts.googleapis.com/css2?family=Inconsolata&family=Poppins:wght@500&family=Roboto:wght@100&display=swap");
+
 body{
-  font-family: system-ui;
+  font-family: "Inconsolata", monospace;
 }
 header{
   background-color: #e4e4e8;
@@ -35,8 +37,15 @@ header{
   border-radius: 50%;
   color: red;
   font-weight: 700;
-  font-family: system-ui;
+  font-family: "Inconsolata", monospace;
   line-height: 18px;
+}
+.header-title {
+  text-align: center;
+  font-size: 2.5em;
+  font-family: "Poppins", sans-serif;
+  margin: 10px 0;
+  color: #454546;
 }
 .logo{
   width: 164px;
@@ -51,7 +60,6 @@ header{
 .cart{
   width: 39px;
   height: 38px;
-  /* cursor: pointer; */
 }
 .cart-products{
   position: absolute!important;
@@ -64,54 +72,50 @@ header{
 
   min-width: 290px;
 }
-/* .cart:hover{
-  margin-bottom: 16px;
-  transition-duration: .5s;
-} */
 .cart:hover{
   margin-bottom: 16px;
   transition-duration: .5s;
 }
 /*end header*/
 .products{
-  /* margin-top: 60px; */
   padding-top: 170px;
-  display: flex;
-  flex-wrap: wrap;
-  justify-content: space-between;
+  display: grid;
+  grid-template-columns: repeat(4, 1fr);
+  grid-gap: 15px;
 }
 
 .carts{
-  max-width: 250px;
-  box-shadow: 0 3px 10px rgb(0 0 0 / 20%);
-  padding-bottom: 34px;
-  margin-bottom: 40px;
-}
-.carts img{
-  width: 100%;
-}
-.carts p{
-  font-family: system-ui;
-  font-weight: 500;
-  padding: 0 20px;
-  margin-bottom: 24px;
-}
-.carts div p{
-  position: absolute;
-  top: 0;
-  right: 0px;
-  background-color: red;
-  color: #fff;
-  padding: 2px 7px 4px 21px;
-  clip-path: polygon(25% 0%, 100% 0%, 100% 100%, 25% 100%, 0% 50%);
-}
-.carts div{
+  border: 1px solid #ccc;
+  padding: 20px;
+  text-align: center;
   position: relative;
 }
+.carts::before {
+  content: "Nuevo";
+  background: #ff4e00;
+  padding: 10px;
+  position: absolute;
+  top: 10px;
+  right: 5px;
+  transform: rotate(-90deg);
+  color: #fff;
+}
+.carts img{
+  width: 300px;
+  height: 300px;
+  object-fit: cover;
+}
+.product__product__title {
+  font-family: "Poppins", sans-serif;
+}
+.product__price {
+  color: #ff4e00;
+  font-weight: bold;
+}
 .carts a{
-  font-family: system-ui;
+  font-family: "Inconsolata", monospace;
   text-decoration: none;
-  background: red;
+  background: #000;
   padding: 9px 23px;
   color: #fff;
   font-size: 17px;
@@ -121,13 +125,10 @@ header{
 
 .carts a:hover{
   background: #fff;
-  color: red;
-  border: solid 2px red;
+  color: #ff4e00;
+  border: solid 2px #ff4e00;
   transition-duration: .3s;
 }
-/* .carts a:hover + .cart-products{
-  display: block;
-} */
 /*float cart*/
 .cart-products .item img{
   width: 115px;
@@ -136,7 +137,7 @@ header{
 .cart-products .item{
   display: flex;
   align-items: center;
-  border-bottom: solid 2px red;
+  border-bottom: solid 2px #ff4e00;
 }
 .cart-products .item .item-content{
   margin: 0 19px;
@@ -146,20 +147,20 @@ header{
   margin: 0;
   font-size: 15px;
   font-weight: 400;
-  font-family: system-ui;
+  font-family: "Inconsolata", monospace;
 }
 .cart-products .item .item-content h6{
   margin: 0;
   font-size: 13px;
   font-weight: 400;
-  font-family: system-ui;
+  font-family: "Inconsolata", monospace;
 }
 .cart-products .item span{
-  background-color: red;
+  background-color: #ff4e00;
   padding: 0px 5px;
   border-radius: 50%;
   color: #fff;
-  font-family: system-ui;
+  font-family: "Inconsolata", monospace;
   cursor: pointer;
 }
 .cart-products h3{
@@ -169,7 +170,7 @@ header{
   font-weight: 700;
 }
 
-/*stye to btn close*/
+/*boton cerrar*/
 p.close-btn{
   top: -4px;
   right: 6px;

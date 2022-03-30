@@ -48,11 +48,15 @@ function readTheContent(product) {
   const infoProduct = {
     //tomamos los valores del producto seleccionado
     image: product.querySelector("div img").src,
-    title: product.querySelector(".title").textContent,
+    title: product.querySelector(".product__title").textContent,
     price: product.querySelector("div p span").textContent,
     id: product.querySelector("a").getAttribute("data-id"),
     amount: 1
   }
+  //almacenamos los productos en el localStorage
+  const becomeJson = JSON.stringify(buyThings);
+  localStorage.setItem("productos", becomeJson);
+  console.log(localStorage);
   //cada que añadamos un producto lo sumamos
   totalCard = parseFloat(totalCard) + parseFloat(infoProduct.price);
   totalCard = totalCard.toFixed(2);
@@ -88,7 +92,7 @@ function loadHtml() {
         <img src="${image}" alt="">
                         <div class="item-content">
                             <h5>${title}</h5>
-                            <h5 class="cart-price">${price}$</h5>
+                            <h5 class="cart-price">$${price}</h5>
                             <h6>Amount: ${amount}</h6>
                         </div>
                         <span class="delete-product" data-id="${id}">X</span>

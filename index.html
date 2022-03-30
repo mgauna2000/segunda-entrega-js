@@ -7,13 +7,13 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Segunda entrega JS</title>
     <link rel="stylesheet" href="css/estilos.css">
-    <link rel="icon" type="image/png" href="img/icon.jpg">
 </head>
 
 <body>
     <header>
         <div class="header-section container">
             <img class="logo" src="./img/img.jpg" alt="">
+            <h1 class="header-title">Otaku's</h1>
             <div>
                 <img onmouseover="showCart(this)" class="cart" src="./img/cart.png" alt="">
                 <p class="count-product">0</p>
@@ -24,7 +24,7 @@
                 <div class="card-items">
                     <!-- items elegidos -->
                 </div>
-                <h2>Total: <strong class="price-total">0</strong> $</h2>
+                <h2>Total: $<strong class="price-total">0</strong></h2>
             </div>
         </div>
     </header>
@@ -33,102 +33,96 @@
             <div class="carts">
                 <div>
                     <img src="./img/manga1.webp" alt="">
-                    <p><span>20</span>$</p>
+                    <p class="product__price">$<span>8000</span></p>
                 </div>
-                <p class="title">Tempest Cataclysm Combo 3 En 1 Gaming Teclado</p>
-                <a href="" data-id="1" class="btn-add-cart">add to cart</a>
+                <p class="product__title">Manga SNK</p>
+                <a href="" data-id="1" class="btn-add-cart">Añadir al carrito</a>
             </div>
             <div class="carts">
                 <div>
                     <img src="./img/manga2.jpg" alt="">
-                    <p><span>35</span>$</p>
+                    <p class="product__price"><span>6300</span></p>
                 </div>
-                <p class="title"> Newskill Suiko Ivory Teclado Mecánico Gaming Full RGB</p>
-                <a href="" class="btn-add-cart" data-id="2">add to cart</a>
+                <p class="product__title">Manga Tokio Ghoul</p>
+                <a href="" class="btn-add-cart" data-id="2">Añadir al carrito</a>
             </div>
             <div class="carts">
                 <div>
                     <img src="./img/manga3.webp" alt="">
-                    <p><span>15.50</span>$</p>
+                    <p class="product__price">$<span>6300</span></p>
                 </div>
-                <p class="title"> Aukey KM-G16 Teclado Mecánico Gaming Retroiluminado</p>
-                <a href="" data-id="3" class="btn-add-cart">add to cart</a>
+                <p class="product__title">Manga Akame Ga Kill</p>
+                <a href="" data-id="3" class="btn-add-cart">Añadir al carrito</a>
             </div>
             <div class="carts">
                 <div>
                     <img src="./img/manga4.webp" alt="">
-                    <p><span>20.20</span>$</p>
+                    <p class="product__price">$<span>12000</span></p>
                 </div>
-                <p class="title"> Razer Huntsman Elite Teclado Mecánico Gaming RGB</p>
-                <a href="" data-id="4" class="btn-add-cart">add to cart</a>
+                <p class="product__title">Manga Naruto</p>
+                <a href="" data-id="4" class="btn-add-cart">Añadir al carrito</a>
             </div>
             <div class="carts">
                 <div>
                     <img src="./img/manga5.webp" alt="">
-                    <p><span>19</span>$</p>
+                    <p class="product__price">$<span>6300</span></p>
                 </div>
-                <p class="title"> Trust GXT 856 Torac Teclado Metálico Gaming RGB</p>
-                <a href="" data-id="5" class="btn-add-cart">add to cart</a>
+                <p class="product__title">Manga Bleach</p>
+                <a href="" data-id="5" class="btn-add-cart">Añadir al carrito</a>
             </div>
             <div class="carts">
                 <div>
                     <img src="./img/manga6.webp" alt="">
-                    <p><span>45</span>$</p>
+                    <p class="product__price">$<span>3400</span></p>
                 </div>
-                <p class="title"> MSI Vigor GK30 Teclado Gaming RGB</p>
-                <a href="" data-id="6" class="btn-add-cart">add to cart</a>
+                <p class="product__title">Manga One Piece</p>
+                <a href="" data-id="6" class="btn-add-cart">Añadir al carrito</a>
             </div>
             <div class="carts">
                 <div>
                     <img src="./img/manga7.webp" alt="">
-                    <p><span>23.99</span>$</p>
+                    <p class="product__price">$<span>3600</span></p>
                 </div>
-                <p class="title"> Genesis Thor 300 RGB Teclado Mecánico Gaming RGB Switch Rojo</p>
-                <a href="" data-id="7" class="btn-add-cart">add to cart</a>
+                <p class="product__title">Manga Evangelion</p>
+                <a href="" data-id="7" class="btn-add-cart">Añadir al carrito</a>
             </div>
             <div class="carts">
                 <div>
                     <img src="./img/manga8.webp" alt="">
-                    <p><span>50</span>$</p>
+                    <p class="product__price">$<span>6300</span></p>
                 </div>
-                <p class="title"> Mars Gaming MKXTKL Teclado Mecánico Gaming RGB</p>
-                <a href="" data-id="8" class="btn-add-cart">add to cart</a>
+                <p class="product__title">Manga fairy tail</p>
+                <a href="" data-id="8" class="btn-add-cart">Añadir al carrito</a>
             </div>
             <div class="carts">
                 <div>
                     <img src="./img/manga9.webp" alt="">
-                    <p><span>16</span>$</p>
+                    <p class="product__price">$<span>6300</span></p>
                 </div>
-                <p class="title"> Trust GXT 881 Odyss Teclado Gaming Semi-Mecánico RGB</p>
-                <a href="" data-id="9" class="btn-add-cart">add to cart</a>
+                <p class="product__title">Manga Sailor Moon</p>
+                <a href="" data-id="9" class="btn-add-cart">Añadir al carrito</a>
             </div>
             <div class="carts">
                 <div>
                     <img src="./img/manga10.webp" alt="">
-                    <p><span>17.50</span>$</p>
+                    <p class="product__price">$<span>8000</span></p>
                 </div>
-                <p class="title"> Krom Krusher Teclado Gaming Híbrido RGB + Ratón</p>
-                <a href="" data-id="10" class="btn-add-cart">add to cart</a>
+                <p class="product__title">Manga Fullmetal Alchemist</p>
+                <a href="" data-id="10" class="btn-add-cart">Añadir al carrito</a>
             </div>
         </div>
     </section>
 
-    <footer>
-        <h6>Developed by <span>Garu</span>
-        </h6>
-    </footer>
-
     <script>
-        function showCart(x){
+        function showCart(x) {
             document.getElementById("products-id").style.display = "block";
         }
-        function closeBtn(){
-             document.getElementById("products-id").style.display = "none";
+        function closeBtn() {
+            document.getElementById("products-id").style.display = "none";
         }
 
     </script>
     <script src="js/functionality.js"></script>
-    <!-- <script src="js/index.js"></script> -->
 </body>
 
 </html>
