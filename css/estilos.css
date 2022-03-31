@@ -129,7 +129,7 @@ header{
   border: solid 2px #ff4e00;
   transition-duration: .3s;
 }
-/*float cart*/
+/*item seleccionados*/
 .cart-products .item img{
   width: 115px;
 }
