@@ -22,7 +22,7 @@ function addProduct(e) {
     const selectProduct = e.target.parentElement;
     Swal.fire({
       title: 'El producto a sido agregado a su carrito',
-      icon: "success",
+      imageUrl: './img/icon.jpg',
       showClass: {
         popup: 'animate__animated animate__fadeInDown'
       },
