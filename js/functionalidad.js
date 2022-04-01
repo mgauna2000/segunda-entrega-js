@@ -23,6 +23,8 @@ function addProduct(e) {
     Swal.fire({
       title: 'El producto a sido agregado a su carrito',
       imageUrl: './img/icon.jpg',
+      confirmButtonColor: '#ff4e00',
+      confirmButtonText: '¡ Arigatō !',
       showClass: {
         popup: 'animate__animated animate__fadeInDown'
       },
