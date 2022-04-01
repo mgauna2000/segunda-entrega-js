@@ -20,6 +20,16 @@ function addProduct(e) {
   if (e.target.classList.contains("btn-add-cart")) {
     //el parentElement agarre al elemento padre de lo que elegimos
     const selectProduct = e.target.parentElement;
+    Swal.fire({
+      title: 'El producto a sido agregado a su carrito',
+      icon: "success",
+      showClass: {
+        popup: 'animate__animated animate__fadeInDown'
+      },
+      hideClass: {
+        popup: 'animate__animated animate__fadeOutUp'
+      }
+    })
     console.log(selectProduct);
     readTheContent(selectProduct);
   }
