@@ -10,40 +10,54 @@ const email = document.querySelector('.email');
 let productos = [
   {
     nombre: "Shingeki No Kyojin",
-    precio: 550,
-    categoria: "manga",
-    stock: 30,
-  },
-  {
-    nombre: "One Piece",
-    precio: 1300,
-    categoria: "cuadro",
-    stock: 20,
+    imagen: "./img/manga1.webp",
+    precio: 8000,
   },
   {
     nombre: "Tokio Ghoul",
-    precio: 1300,
-    categoria: "cuadro",
-    stock: 15,
-  },
-  {
-    nombre: "Jujutsu Kaisen",
-    precio: 3500,
-    categoria: "figura de accion",
-    stock: 5,
+    imagen:"./img/manga2.jpg",
+    precio: 6300,
   },
   {
     nombre: "Akame Ga Kill",
-    precio: 550,
-    categoria: "manga",
-    stock: 100,
+    imagen: "./img/manga3.webp",
+    precio: 6300,
   },
   {
-    nombre: "Goblin Slayer",
-    precio: 550,
-    categoria: "manga",
-    stock: 80,
+    nombre: "Naruto",
+    imagen: "./img/manga4.webp",
+    precio: 12000,
   },
+  {
+    nombre: "Bleach",
+    imagen: "./img/manga5.webp",
+    precio: 6300,
+  },
+  {
+    nombre: "One Piece",
+    imagen: "./img/manga6.webp",
+    precio: 3400,
+  },
+  {
+    nombre: "Evangelion",
+    imagen: "./img/manga7.webp",
+    precio: 3600,
+  },
+  {
+    nombre: "Fairy tail",
+    imagen: "./img/manga8.webp",
+    precio: 6300,
+  },
+  {
+    nombre: "Sailor Moon",
+    imagen: "./img/manga9.webp",
+    precio: 6300,
+  },
+  {
+    nombre: "Fullmetal alchemist",
+    imagen: "./img/manga10.webp",
+    precio: 8000,
+  }
 ];
 
 const mostrarProductos = (productos) => {

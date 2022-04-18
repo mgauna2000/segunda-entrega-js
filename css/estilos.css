@@ -180,3 +180,30 @@ p.close-btn{
   cursor: pointer;
   color: #000;
 }
+
+/* proximos productos */
+.upcoming-products img {
+  width: 150px;
+  height: 150px;
+  object-fit: cover;
+}
+.upcoming-products h2 {
+  font-size: 40px;
+  padding-top: 40px;
+  font-family: "Inconsolata", monospace;
+  font-weight: 600;
+  text-transform: capitalize;
+  text-decoration: underline;
+}
+.upcoming-products h3 {
+  font-size: 24px;
+  font-family: "Poppins", sans-serif;
+}
+.upcoming-products p {
+  font-size: 18px;
+  padding: 5px;
+  font-family: "Inconsolata", monospace;
+}
+.upcoming-products li {
+  list-style: none;
+}
